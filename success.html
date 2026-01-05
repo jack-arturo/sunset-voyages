@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Sunset Voyages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Georgia", serif;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8e4d9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #2c3e50;
+        }
+
+        .success-container {
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #28a745;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .confirmation-box {
+            background: #f0f8f0;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .confirmation-number {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .confirmation-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3a5f;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        .next-steps {
+            text-align: left;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .next-steps h3 {
+            font-size: 18px;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .next-steps ul {
+            margin-left: 20px;
+            color: #6c757d;
+            line-height: 2;
+        }
+
+        .next-steps li {
+            margin-bottom: 8px;
+        }
+
+        .timeline {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 10px;
+            border: 1px solid #ffc107;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: #856404;
+            font-size: 15px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e9ecef;
+            color: #6c757d;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .upsell-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .upsell-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .upsell-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">⚓</div>
+        <h1>Booking Confirmed!</h1>
+        <p class="subtitle">The journey begins soon.</p>
+
+        <div class="confirmation-box">
+            <p class="confirmation-number">Voyage Confirmation Number</p>
+            <p class="confirmation-code" id="confirmationCode">SV-2026-XXXX</p>
+        </div>
+
+        <div class="next-steps">
+            <h3>What Happens Next:</h3>
+            <ul>
+                <li>A voyage coordinator will contact you within 24-48 hours</li>
+                <li>Complete documentation package will arrive via secure courier</li>
+                <li>Your loved one's cabin assignment will be confirmed</li>
+                <li>Embarkation instructions will follow (usually within 7-14 days)</li>
+                <li>Final arrangements consultation will be scheduled</li>
+            </ul>
+        </div>
+
+        <div class="timeline">
+            <p class="timeline-title">Important Timeline</p>
+            <p class="timeline-text">
+                Embarkation typically occurs within 2-4 weeks of confirmation.
+                All documentation should be signed and returned within 7 days
+                to guarantee your reserved cabin.
+            </p>
+        </div>
+
+        <a href="/" class="cta-button">Return to Homepage</a>
+
+        <div class="upsell-box">
+            <p class="upsell-title">Don't Forget!</p>
+            <p class="upsell-text">
+                Add the Communication Plus Package ($3,200) to receive bi-weekly
+                scheduled calls with your loved one. Contact your voyage coordinator
+                to add this before embarkation.
+            </p>
+        </div>
+
+        <div class="footer-note">
+            A confirmation email has been sent to your registered address.
+            Please check your spam folder if you don't see it within 10 minutes.
+            <br><br>
+            For questions, contact our Voyage Support team at
+            <strong>voyages@sunset-voyages.com</strong>
+        </div>
+
+        <p class="disclaimer">
+            This booking is non-refundable after embarkation. Changes to passenger
+            manifests require 72-hour notice and may incur adjustment fees. Sunset
+            Voyages LLC reserves the right to modify voyage itineraries based on
+            operational requirements. All services subject to Terms of Passage.
+            Registered in Liberia. Not responsible for changes in passenger status.
+        </p>
+    </div>
+
+    <script>
+        // Generate a random confirmation code
+        function generateCode() {
+            const year = new Date().getFullYear();
+            const random = Math.random().toString(36).substring(2, 6).toUpperCase();
+            return `SV-${year}-${random}`;
+        }
+
+        document.getElementById('confirmationCode').textContent = generateCode();
+
+        // Check for session_id in URL (from Stripe)
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        if (sessionId) {
+            console.log('Stripe session completed:', sessionId);
+        }
+    </script>
+</body>
+</html>

@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>⚠️ URGENT: Complete Your Order - Sunset Voyages</title>
+    <script src="https://js.stripe.com/v3/"></script>
     <style>
       * {
         margin: 0;
@@ -707,7 +709,7 @@
           ⚠️ Only 1 cabin at this price remains!
         </div>
 
-        <button class="order-button">🚢 COMPLETE BOOKING NOW →</button>
+        <button class="order-button" id="checkoutButton">🚢 COMPLETE BOOKING NOW →</button>
 
         <div class="guarantee-badges">
           <div class="badge">
@@ -930,18 +932,51 @@
         arrow.textContent = "✓";
       }, 3000);
 
-      // Fake loading states
-      document.querySelectorAll(".order-button").forEach((button) => {
-        button.addEventListener("click", (e) => {
-          e.preventDefault();
-          button.textContent = "PROCESSING... PLEASE WAIT...";
-          button.style.background = "linear-gradient(135deg, #ff9900, #ff6600)";
-          setTimeout(() => {
-            alert(
-              "CONGRATULATIONS! But wait... you qualify for our PLATINUM PLUS upgrade! (Page would redirect to another upsell)"
-            );
-          }, 2000);
-        });
+      // Stripe checkout integration
+      const stripe = Stripe('pk_live_gi4hvXYWhdv0I9JlntOIL8u8');
+
+      document.getElementById('checkoutButton').addEventListener('click', async function(e) {
+        e.preventDefault();
+        const button = this;
+        button.disabled = true;
+        button.textContent = 'PROCESSING... PLEASE WAIT...';
+        button.style.background = 'linear-gradient(135deg, #ff9900, #ff6600)';
+
+        try {
+          // Default to Premium Transition package ($74,900)
+          const response = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              package: 'premium',
+              price: 74900,
+              addons: []
+            })
+          });
+
+          const session = await response.json();
+
+          if (session.error) {
+            throw new Error(session.error);
+          }
+
+          // Redirect to Stripe Checkout
+          const result = await stripe.redirectToCheckout({
+            sessionId: session.id
+          });
+
+          if (result.error) {
+            throw new Error(result.error.message);
+          }
+        } catch (error) {
+          console.error('Checkout error:', error);
+          alert('Booking system temporarily unavailable. Please try again or contact voyage support.');
+          button.disabled = false;
+          button.textContent = '🚢 COMPLETE BOOKING NOW →';
+          button.style.background = 'linear-gradient(135deg, #00ff00, #00cc00)';
+        }
       });
 
       // Update footer timer
