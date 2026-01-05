@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sunset Voyages - Premium Extended-Stay Senior Cruises</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        background: linear-gradient(135deg, #f5f5dc 0%, #e8e4d9 100%);
+        color: #2c3e50;
+      }
+
+      .header {
+        background: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo h1 {
+        color: #1e3a5f;
+        font-size: 32px;
+        font-weight: 300;
+      }
+
+      .logo .tagline {
+        color: #7b8a9c;
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      .trust-badges {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .badge {
+        background: #f0f0f0;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+
+      .hero {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23a8c5d8" width="1200" height="600"/><path fill="%23fff" d="M0 400L1200 400L1200 300Q600 250 0 300Z"/></svg>')
+          center/cover;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero h2 {
+        font-size: 48px;
+        color: #1e3a5f;
+        margin-bottom: 20px;
+        font-weight: 300;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #5a6c7d;
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        padding: 20px 40px;
+        font-size: 24px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+        transition: transform 0.3s;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .timer {
+        background: #fff3cd;
+        padding: 15px;
+        margin: 30px auto;
+        max-width: 600px;
+        border-radius: 10px;
+        border: 2px solid #ffc107;
+      }
+
+      .timer-text {
+        color: #856404;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .time-unit {
+        background: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+      }
+
+      .time-unit .number {
+        font-size: 28px;
+        font-weight: bold;
+        color: #dc3545;
+      }
+
+      .time-unit .label {
+        font-size: 12px;
+        color: #6c757d;
+      }
+
+      .features {
+        padding: 60px 0;
+        background: white;
+      }
+
+      .features h3 {
+        text-align: center;
+        font-size: 36px;
+        color: #1e3a5f;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .feature-card {
+        padding: 30px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .feature-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .feature-card h4 {
+        font-size: 20px;
+        color: #1e3a5f;
+        margin-bottom: 15px;
+      }
+
+      .feature-card p {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      .pricing {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 80px 0;
+        color: white;
+      }
+
+      .pricing h3 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .pricing-subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 50px;
+        opacity: 0.9;
+      }
+
+      .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .price-card {
+        background: white;
+        color: #333;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .price-card.featured {
+        transform: scale(1.05);
+        border: 3px solid #ffc107;
+      }
+
+      .ribbon {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff6b6b;
+        color: white;
+        padding: 5px 20px;
+        transform: rotate(15deg);
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .package-name {
+        font-size: 24px;
+        color: #1e3a5f;
+        margin-bottom: 20px;
+      }
+
+      .price {
+        font-size: 48px;
+        font-weight: bold;
+        color: #28a745;
+        margin-bottom: 10px;
+      }
+
+      .price-note {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .package-features {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .package-features li {
+        padding: 10px 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .package-features li:before {
+        content: "✓ ";
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .select-button {
+        background: #28a745;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .upsells {
+        background: #f8f9fa;
+        padding: 60px 0;
+      }
+
+      .upsells h3 {
+        text-align: center;
+        font-size: 32px;
+        color: #1e3a5f;
+        margin-bottom: 40px;
+      }
+
+      .addon-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .addon-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid #e9ecef;
+        transition: border-color 0.3s;
+      }
+
+      .addon-card:hover {
+        border-color: #007bff;
+      }
+
+      .addon-price {
+        color: #28a745;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .addon-name {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .addon-desc {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 15px;
+      }
+
+      .addon-button {
+        background: #007bff;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .testimonials {
+        padding: 60px 0;
+        background: white;
+      }
+
+      .testimonials h3 {
+        text-align: center;
+        font-size: 32px;
+        color: #1e3a5f;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .testimonial {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .testimonial:before {
+        content: '"';
+        font-size: 60px;
+        color: #dee2e6;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+      }
+
+      .testimonial-text {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-style: italic;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        color: #1e3a5f;
+      }
+
+      .testimonial-location {
+        color: #6c757d;
+        font-size: 14px;
+      }
+
+      .audio-testimonials {
+        padding: 60px 0;
+        background: #f8f9fa;
+      }
+
+      .audio-testimonials h3 {
+        text-align: center;
+        font-size: 32px;
+        color: #1e3a5f;
+        margin-bottom: 10px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #6c757d;
+        margin-bottom: 40px;
+        font-style: italic;
+      }
+
+      .audio-testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .audio-testimonial {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .audio-testimonial:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 15px;
+      }
+
+      .profile-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid #1e3a5f;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .profile-info h4 {
+        font-size: 18px;
+        color: #1e3a5f;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .profile-location {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 3px;
+      }
+
+      .profile-relation {
+        font-size: 13px;
+        color: #95a5a6;
+        font-style: italic;
+      }
+
+      .audio-player {
+        margin-bottom: 20px;
+      }
+
+      .audio-player audio {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        outline: none;
+      }
+
+      .audio-player audio::-webkit-media-controls-panel {
+        background-color: #f8f9fa;
+        border-radius: 20px;
+      }
+
+      .audio-testimonial-text {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #2c3e50;
+        font-style: italic;
+        position: relative;
+        padding-left: 20px;
+        border-left: 4px solid #1e3a5f;
+      }
+
+      .audio-testimonial-text::before {
+        content: '"';
+        font-size: 40px;
+        color: #dee2e6;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+      }
+
+      .faq {
+        padding: 60px 0;
+        background: #f8f9fa;
+      }
+
+      .faq h3 {
+        text-align: center;
+        font-size: 32px;
+        color: #1e3a5f;
+        margin-bottom: 40px;
+      }
+
+      .faq-item {
+        max-width: 800px;
+        margin: 0 auto 20px;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .faq-question {
+        font-weight: bold;
+        color: #1e3a5f;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .faq-answer {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      .promo-banner {
+        background: #28a745;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .promo-code {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 0 10px;
+      }
+
+      .footer {
+        background: #2c3e50;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer-links {
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: #95a5a6;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 14px;
+      }
+
+      .footer-disclaimer {
+        color: #7f8c8d;
+        font-size: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      .audio-controls {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .audio-controls button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="promo-banner">
+      ⚡ LIMITED TIME: Use code <span class="promo-code">FINALJOURNEY</span> for
+      15% off all packages! Only 3 cabins remaining!
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <div>
+            <h1>⚓ Sunset Voyages</h1>
+            <div class="tagline">Extended-Stay Senior Cruising Solutions</div>
+          </div>
+          <div class="trust-badges">
+            <span class="badge">Est. 2025</span>
+            <span class="badge">BBB Pending</span>
+            <span class="badge">International Waters Certified</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h2>Give Your Parents the Adventure They Deserve</h2>
+        <p>
+          Comprehensive, all-inclusive senior care aboard our luxury vessels
+        </p>
+
+        <div class="timer">
+          <div class="timer-text">⏰ Special Pricing Ends In:</div>
+          <div class="countdown">
+            <div class="time-unit">
+              <div class="number" id="days">02</div>
+              <div class="label">Days</div>
+            </div>
+            <div class="time-unit">
+              <div class="number" id="hours">14</div>
+              <div class="label">Hours</div>
+            </div>
+            <div class="time-unit">
+              <div class="number" id="minutes">37</div>
+              <div class="label">Minutes</div>
+            </div>
+            <div class="time-unit">
+              <div class="number" id="seconds">42</div>
+              <div class="label">Seconds</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="checkout.html" class="cta-button pulse"
+          >Reserve Their Cabin Today</a
+        >
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h3>Why Families Choose Sunset Voyages</h3>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚢</div>
+            <h4>Perpetual Voyage Program</h4>
+            <p>
+              Our unique continuous journey model means your loved ones enjoy
+              endless new horizons. No fixed return dates means maximum
+              flexibility for everyone involved.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏥</div>
+            <h4>Comprehensive Onboard Care</h4>
+            <p>
+              Full medical facilities staffed 16 hours daily. Our international
+              waters location ensures simplified regulatory compliance and
+              innovative care options.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h4>Structured Daily Programming</h4>
+            <p>
+              From sunrise tai chi to midnight buffets, every hour is optimized
+              for engagement. Participation tracking ensures maximum value from
+              your investment.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h4>Limited Communication Windows</h4>
+            <p>
+              Satellite phone access available during designated hours
+              (additional fees apply). This digital detox promotes
+              present-moment living and reduces anxiety.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌊</div>
+            <h4>International Route Optimization</h4>
+            <p>
+              Our proprietary route planning ensures year-round temperate
+              climates while maintaining cost efficiency through strategic port
+              selections.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h4>Complete Documentation Services</h4>
+            <p>
+              We handle all paperwork including power of attorney, asset
+              management forms, and final arrangement preferences. One signature
+              simplifies everything.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h3>Investment Options</h3>
+        <p class="pricing-subtitle">
+          Choose the package that best suits your family's transition needs
+        </p>
+
+        <div class="pricing-cards">
+          <div class="price-card">
+            <div class="package-name">Essential Departure</div>
+            <div class="price">$47,900</div>
+            <div class="price-note">One-time comprehensive fee</div>
+            <ul class="package-features">
+              <li>Interior cabin accommodation</li>
+              <li>Standard meal service (2 daily)</li>
+              <li>Basic activity programming</li>
+              <li>Quarterly photo updates</li>
+              <li>Essential medication management</li>
+              <li>Standard documentation package</li>
+            </ul>
+            <button
+              class="select-button"
+              onclick="window.location.href='checkout.html'"
+            >
+              Select Package
+            </button>
+          </div>
+
+          <div class="price-card featured">
+            <div class="ribbon">MOST POPULAR</div>
+            <div class="package-name">Premium Transition</div>
+            <div class="price">$74,900</div>
+            <div class="price-note">Best value for peace of mind</div>
+            <ul class="package-features">
+              <li>Ocean-view cabin with balcony</li>
+              <li>All-inclusive dining (24/7 access)</li>
+              <li>Premium activities & entertainment</li>
+              <li>Monthly video messages (pre-recorded)</li>
+              <li>Comprehensive healthcare coverage</li>
+              <li>Advanced directive execution</li>
+              <li>Complimentary memorial planning</li>
+            </ul>
+            <button
+              class="select-button"
+              onclick="window.location.href='checkout.html'"
+            >
+              Select Package
+            </button>
+          </div>
+
+          <div class="price-card">
+            <div class="package-name">Elite Horizon</div>
+            <div class="price">$124,900</div>
+            <div class="price-note">Complete legacy solution</div>
+            <ul class="package-features">
+              <li>Suite accommodation with butler</li>
+              <li>Gourmet dining with wine pairings</li>
+              <li>Exclusive deck access</li>
+              <li>Weekly holographic calls (5 min)</li>
+              <li>Concierge medical services</li>
+              <li>Full estate management</li>
+              <li>Priority disembarkation (if applicable)</li>
+              <li>Commemorative voyage album</li>
+            </ul>
+            <button
+              class="select-button"
+              onclick="window.location.href='checkout.html'"
+            >
+              Select Package
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="upsells">
+      <div class="container">
+        <h3>Enhance Their Journey</h3>
+        <div class="addon-grid">
+          <div class="addon-card">
+            <div class="addon-price">+$4,900</div>
+            <div class="addon-name">Memory Maker Package</div>
+            <div class="addon-desc">
+              Professional photography, video diary service, and digital
+              scrapbook creation
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+          <div class="addon-card">
+            <div class="addon-price">+$3,200</div>
+            <div class="addon-name">Communication Plus</div>
+            <div class="addon-desc">
+              Bi-weekly scheduled calls and priority email access (subject to
+              availability)
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+          <div class="addon-card">
+            <div class="addon-price">+$7,500</div>
+            <div class="addon-name">VIP Shore Excursions</div>
+            <div class="addon-desc">
+              Supervised land activities at select ports (participation not
+              guaranteed)
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+          <div class="addon-card">
+            <div class="addon-price">+$2,100</div>
+            <div class="addon-name">Comfort Care Kit</div>
+            <div class="addon-desc">
+              Premium bedding, aromatherapy, and personalized cabin ambiance
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+          <div class="addon-card">
+            <div class="addon-price">+$5,900</div>
+            <div class="addon-name">Legacy Documentation</div>
+            <div class="addon-desc">
+              Complete biography service with professional writers and archival
+              storage
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+          <div class="addon-card">
+            <div class="addon-price">+$8,900</div>
+            <div class="addon-name">Perpetual Care Fund</div>
+            <div class="addon-desc">
+              Ensures continued premium services regardless of journey duration
+            </div>
+            <button class="addon-button">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h3>What Families Are Saying</h3>
+        <div class="testimonial-grid">
+          <div class="testimonial">
+            <p class="testimonial-text">
+              The decision wasn't easy, but seeing how happy mom looked in her
+              quarterly photo made it all worthwhile. The estate was settled
+              smoothly and we have peace of mind.
+            </p>
+            <div class="testimonial-author">Jennifer M.</div>
+            <div class="testimonial-location">Phoenix, AZ</div>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">
+              Dad always wanted to travel. Sunset Voyages gave him that
+              opportunity while handling all the complex care needs. The
+              one-time payment simplified everything for our family.
+            </p>
+            <div class="testimonial-author">Robert K.</div>
+            <div class="testimonial-location">Tampa, FL</div>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">
+              The comprehensive documentation package saved us years of legal
+              hassles. Knowing everything is handled according to their wishes
+              brings tremendous comfort.
+            </p>
+            <div class="testimonial-author">Sarah L.</div>
+            <div class="testimonial-location">Portland, OR</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audio-testimonials">
+      <div class="container">
+        <h3>Hear From Real Families</h3>
+        <p class="section-subtitle">
+          Listen to authentic testimonials from families who made the journey
+        </p>
+        <div class="audio-testimonial-grid">
+          <div class="audio-testimonial">
+            <div class="testimonial-profile">
+              <img
+                src="img/jennifer.jpg"
+                alt="Jennifer M."
+                class="profile-avatar"
+              />
+              <div class="profile-info">
+                <h4>Jennifer M.</h4>
+                <p class="profile-location">Phoenix, AZ</p>
+                <p class="profile-relation">Daughter of passenger</p>
+              </div>
+            </div>
+            <div class="audio-player">
+              <audio controls preload="metadata">
+                <source
+                  src="audio/tts_Hi_th_20250910_174941.mp3"
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <p class="audio-testimonial-text">
+              "When we first heard about Sunset Voyages, we weren't sure. But
+              after seeing how comprehensive their care program was, and knowing
+              Mom would have constant medical supervision, it felt like the
+              right choice for our family..."
+            </p>
+          </div>
+
+          <div class="audio-testimonial">
+            <div class="testimonial-profile">
+              <img
+                src="img/robert.jpg"
+                alt="Robert K."
+                class="profile-avatar"
+              />
+              <div class="profile-info">
+                <h4>Robert K.</h4>
+                <p class="profile-location">Tampa, FL</p>
+                <p class="profile-relation">Son of passenger</p>
+              </div>
+            </div>
+            <div class="audio-player">
+              <audio controls preload="metadata">
+                <source
+                  src="audio/tts_Hello_20250910_175026.mp3"
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <p class="audio-testimonial-text">
+              "Dad always talked about seeing the world. The perpetual voyage
+              program meant he could finally live that dream while getting the
+              care he needed. The quarterly photo updates give us such peace of
+              mind..."
+            </p>
+          </div>
+
+          <div class="audio-testimonial">
+            <div class="testimonial-profile">
+              <img src="img/sarah.jpg" alt="Sarah L." class="profile-avatar" />
+              <div class="profile-info">
+                <h4>Sarah L.</h4>
+                <p class="profile-location">Portland, OR</p>
+                <p class="profile-relation">Daughter of passenger</p>
+              </div>
+            </div>
+            <div class="audio-player">
+              <audio controls preload="metadata">
+                <source
+                  src="audio/tts_Hi_ev_20250910_175132.mp3"
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <p class="audio-testimonial-text">
+              "The documentation services were incredible. Everything was
+              handled so professionally - the power of attorney, estate
+              planning, everything. It removed such a burden from our family
+              during an already difficult time..."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h3>Frequently Asked Questions</h3>
+
+        <div class="faq-item">
+          <div class="faq-question">How long does the voyage last?</div>
+          <div class="faq-answer">
+            Our perpetual voyage model operates on an open-ended timeline. The
+            journey continues as long as it remains appropriate, with no
+            predetermined endpoint. This ensures maximum value and eliminates
+            the stress of transition planning.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Can we visit during the voyage?</div>
+          <div class="faq-answer">
+            While direct visitation isn't part of our standard program due to
+            international routing complexities, we offer comprehensive
+            communication packages. Studies show that limiting visits actually
+            reduces separation anxiety for all parties.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What happens in case of medical emergencies?
+          </div>
+          <div class="faq-answer">
+            Our onboard medical facilities are equipped for most situations. For
+            complex cases, we have arrangements with international partners. All
+            decisions are handled according to the pre-voyage documentation,
+            removing burden from families during difficult times.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Is the payment really all-inclusive?</div>
+          <div class="faq-answer">
+            The base package covers all essentials for the complete journey.
+            Optional add-ons enhance the experience but aren't required. There
+            are no hidden fees or unexpected costs, providing complete financial
+            closure.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">What about their personal belongings?</div>
+          <div class="faq-answer">
+            Each passenger may bring two suitcases. Remaining possessions can be
+            managed through our Estate Simplification Service (additional fee).
+            This helps families avoid difficult decisions and maximize asset
+            preservation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="#">Terms of Passage</a>
+          <a href="#">Privacy at Sea</a>
+          <a href="#">International Compliance</a>
+          <a href="#">Testimonial Verification</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-disclaimer">
+          Sunset Voyages operates under maritime law in international waters.
+          All transactions are final upon embarkation. Passenger manifests are
+          sealed for privacy. Communication schedules subject to atmospheric
+          conditions. Not responsible for changes in passenger status during
+          voyage. Estate resolution services provided through third-party
+          partners. Commemorative materials produced posthumously as applicable.
+          © 2026 Sunset Voyages LLC. Registered in Liberia.
+        </div>
+      </div>
+    </footer>
+
+    <div class="audio-controls">
+      <button onclick="playWelcome()">🔊 Captain's Welcome</button>
+      <button onclick="playTestimonial()">🎵 Background Music</button>
+    </div>
+
+    <script>
+      // Countdown timer
+      function updateCountdown() {
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 2);
+        countdownDate.setHours(23, 59, 59);
+
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").textContent = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").textContent = String(
+          minutes
+        ).padStart(2, "0");
+        document.getElementById("seconds").textContent = String(
+          seconds
+        ).padStart(2, "0");
+      }
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Add to cart functionality
+      document.querySelectorAll(".addon-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.textContent = "✓ Added";
+          this.style.background = "#28a745";
+          setTimeout(() => {
+            this.textContent = "Add Another?";
+            this.style.background = "#17a2b8";
+          }, 2000);
+        });
+      });
+
+      // Package selection - already handled by onclick attributes
+
+      // Audio functions
+      let currentAudio = null;
+
+      function playWelcome() {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+        currentAudio = new Audio("./audio/tts_Welco_20250910_163321.mp3");
+        currentAudio.play().catch((e) => {
+          console.error("Error playing welcome audio:", e);
+          alert("Audio playback failed. Please check your browser settings.");
+        });
+      }
+
+      function playTestimonial() {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+        }
+        currentAudio = new Audio("./audio/sfx_Gentl_20250910_163358.mp3");
+        currentAudio.play().catch((e) => {
+          console.error("Error playing testimonial audio:", e);
+          alert("Audio playback failed. Please check your browser settings.");
+        });
+      }
+
+      // Random "live" updates
+      const updates = [
+        "Cabin B-47 just reserved from Miami, FL",
+        "Premium Transition package selected by family in Boston, MA",
+        "Memory Maker addon purchased from Seattle, WA",
+        "Elite Horizon suite booking from New York, NY",
+      ];
+
+      function showNotification() {
+        if (Math.random() > 0.7) {
+          const update = updates[Math.floor(Math.random() * updates.length)];
+          console.log("🚢 Update:", update);
+        }
+      }
+
+      setInterval(showNotification, 15000);
+    </script>
+  </body>
+</html>
